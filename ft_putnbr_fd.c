@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 20:00:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/23 15:08:58 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2020/01/23 20:34:21 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void		nbr_rec_fd(int n, int fd)
 
 void			ft_putnbr_fd(int nb, int fd)
 {
-	if (!fd)
+	if (fd < 0)
 		return ;
 	if (nb == -2147483648)
 		write(fd, "-2147483648", 11);

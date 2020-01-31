@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:42:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/23 15:39:18 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2020/01/23 20:46:18 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char			*ft_itoa(int n)
 
 	nb = n;
 	lgt = strlgt(nb);
-	if (nb == -2147483648)
+	if (nb == INT_FAST32_MIN)
 		return (ft_strdup("-2147483648"));
-	if (!(str = (char *)malloc(sizeof(char) * (lgt + 1))))
+	if (!(str = ft_calloc((lgt + 1), 1)))
 		return (NULL);
 	if (nb < 0)
 		nb *= -1;
@@ -52,6 +52,5 @@ char			*ft_itoa(int n)
 	}
 	if (n < 0)
 		str[0] = '-';
-	str[end] = '\0';
 	return (str);
 }

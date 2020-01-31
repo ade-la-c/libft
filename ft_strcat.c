@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 16:42:55 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/23 15:22:10 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2020/01/27 16:49:36 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	len;
-	size_t	i;
+	size_t		len;
+	int			i;
 
 	if (!s1 || !s2)
 		return (NULL);

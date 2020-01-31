@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 17:38:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/22 20:06:38 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2020/01/27 16:41:01 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		checkset(char c, const char *set)
 {
-	int	i;
+	int		i;
 
 	i = -1;
 	while (set[++i])
@@ -37,6 +37,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 	while (j > 0 && checkset(s1[j], set))
 		j--;
 	if (i > j)
-		return (ft_strdup(""));
+		return (ft_calloc(1, 1));
 	return (ft_substr(s1, i, (j - i + 1)));
 }
