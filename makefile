@@ -6,7 +6,7 @@
 #    By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/23 14:15:40 by ade-la-c          #+#    #+#              #
-#    Updated: 2020/01/23 14:15:45 by ade-la-c         ###   ########.fr        #
+#    Updated: 2020/10/20 20:36:36 by ade-la-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,10 @@ SRCS	= ft_strlen.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putnbr_base.c \
+		ft_utoa.c \
 
 OBJS	= ${SRCS:.c=.o}
 

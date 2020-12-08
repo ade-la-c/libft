@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 20:00:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/10/16 16:30:11 by ade-la-c         ###   ########.fr       */
+/*   Created: 2020/10/20 20:35:30 by ade-la-c          #+#    #+#             */
+/*   Updated: 2020/10/23 17:58:57 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		nbr_rec_fd(long n, int fd)
+static int	get_size(unsigned long long n)
 {
-	char m;
+	int size;
 
-	if (n > 9)
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		m = n % 10 + '0';
-		nbr_rec_fd((n / 10), fd);
+		n = n / 10;
+		size++;
 	}
-	else
-		m = n + 48;
-	write(fd, &m, 1);
+	return (size);
 }
 
-void			ft_putnbr_fd(long nb, int fd)
+char		*ft_utoa(unsigned long long n)
 {
-	if (fd < 0)
-		return ;
-	if (nb == -2147483648)
-		write(fd, "-2147483648", 11);
-	else
+	int					size;
+	char				*nbr;
+
+	size = 0;
+	size += get_size(n);
+	if (!(nbr = ft_calloc(1, sizeof(char) * (size + 1))))
+		return (NULL);
+	size--;
+	while (size >= 0)
 	{
-		if (nb < 0)
-		{
-			nb = -nb;
-			write(fd, "-", 1);
-		}
-		nbr_rec_fd(nb, fd);
+		nbr[size] = (n % 10) + 48;
+		size--;
+		n = n / 10;
 	}
+	return (nbr);
 }
