@@ -6,14 +6,14 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 20:30:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/27 17:12:11 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:19:40 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int		arraysize(char const *s, char c)
+static int	arraysize(char const *s, char c)
 {
 	int		i;
 	int		count;
@@ -45,7 +45,7 @@ static size_t	definelen(char const *s, char c, int i)
 	return (j);
 }
 
-static void		*ft_free(char **strs)
+static void	*ft_free(char **strs)
 {
 	int	i;
 
@@ -57,25 +57,25 @@ static void		*ft_free(char **strs)
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		nbwords;
 	char	**strs;
 
 	i = 0;
 	j = -1;
 	if (!s)
 		return (NULL);
-	nbwords = arraysize(s, c);
-	if (!(strs = (char **)malloc(sizeof(char *) * (nbwords + 1))))
+	strs = (char **)malloc(sizeof(char *) * (arraysize(s, c) + 1));
+	if (!strs)
 		return (NULL);
-	while (s[i] && j < nbwords)
+	while (s[i] && j < arraysize(s, c))
 	{
 		if (s[i] != c)
 		{
-			if (!(strs[++j] = (char *)ft_substr(s, i, definelen(s, c, i))))
+			strs[++j] = (char *)ft_substr(s, i, definelen(s, c, i));
+			if (!strs[++j])
 				return (ft_free(strs));
 			i += definelen(s, c, i);
 		}

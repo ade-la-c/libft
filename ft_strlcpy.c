@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 14:53:31 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/20 23:11:49 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:41:26 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	lgt;
 	size_t	i;

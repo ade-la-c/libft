@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 18:44:31 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/08 21:38:31 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:50:46 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

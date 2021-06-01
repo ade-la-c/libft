@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 17:38:05 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/27 16:41:01 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:42:33 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		checkset(char c, const char *set)
+static int	checkset(char c, const char *set)
 {
 	int		i;
 
@@ -23,7 +23,7 @@ static int		checkset(char c, const char *set)
 	return (0);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;

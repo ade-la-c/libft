@@ -6,11 +6,15 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 18:11:37 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/10/16 18:43:12 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:59:51 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	douteuse cette fonction, à tester
+*/
 
 void	mini_putnbr_base(int nb, char *base)
 {
@@ -22,7 +26,7 @@ void	mini_putnbr_base(int nb, char *base)
 	write(1, &base[nb], 1);
 }
 
-int		check_base(char *base)
+int	check_base(char *base)
 {
 	int	i;
 	int	j;
@@ -71,6 +75,6 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	int	size_base;
 
-	if ((size_base = check_base(base)))
-		putnbr_base((long)nbr, base, size_base);
+	size_base = check_base(base);
+	putnbr_base((long)nbr, base, size_base);
 }

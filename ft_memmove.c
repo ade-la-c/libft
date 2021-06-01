@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 17:31:02 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/10 18:21:24 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:54:56 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	unsigned char	*str2;
 
 	i = -1;
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	if (!s1 && !s2)
 		return (NULL);
 	if (s1 > s2)
@@ -36,5 +36,5 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 		while (++i < n)
 			str1[i] = str2[i];
 	}
-	return ((void*)str1);
+	return ((void *)str1);
 }

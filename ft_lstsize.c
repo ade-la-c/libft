@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 16:10:55 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/20 16:38:50 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:53:59 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 

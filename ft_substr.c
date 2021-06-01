@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 15:54:50 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/25 15:54:10 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:43:03 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_calloc(1, 1));
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
-	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
 	ft_strncpy(str, &s[start], len);
 	str[len] = '\0';

@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:42:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/10/20 20:29:56 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:51:34 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		strlgt(int n)
+static int	strlgt(int n)
 {
 	int			count;
 
@@ -29,7 +29,7 @@ static int		strlgt(int n)
 	return (count);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long int	nb;
 	char		*str;
@@ -40,7 +40,8 @@ char			*ft_itoa(int n)
 	lgt = strlgt(nb);
 	if (nb == INT_FAST32_MIN)
 		return (ft_strdup("-2147483648"));
-	if (!(str = ft_calloc((lgt + 1), 1)))
+	str = ft_calloc((lgt + 1), 1);
+	if (!str)
 		return (NULL);
 	if (nb < 0)
 		nb *= -1;

@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 20:35:30 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/10/23 17:58:57 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 17:43:41 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_size(unsigned long long n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n == 0)
@@ -27,14 +27,15 @@ static int	get_size(unsigned long long n)
 	return (size);
 }
 
-char		*ft_utoa(unsigned long long n)
+char	*ft_utoa(unsigned long long n)
 {
 	int					size;
 	char				*nbr;
 
 	size = 0;
 	size += get_size(n);
-	if (!(nbr = ft_calloc(1, sizeof(char) * (size + 1))))
+	nbr = ft_calloc(1, sizeof(char) * (size + 1));
+	if (!nbr)
 		return (NULL);
 	size--;
 	while (size >= 0)

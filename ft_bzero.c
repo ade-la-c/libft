@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 15:12:01 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/20 20:21:40 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:48:16 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*str;
 
 	i = 0;
-	str = (char*)s;
+	str = (char *)s;
 	while (i < n)
 	{
 		str[i] = 0;

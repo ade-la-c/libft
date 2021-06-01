@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 14:45:11 by ade-la-c          #+#    #+#             */
-/*   Updated: 2020/01/22 14:07:49 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:52:59 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** (enlever le ' || !del' ligne 25 pour test)
 */
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*lsts;
@@ -27,7 +27,8 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new = NULL;
 	while (lst)
 	{
-		if (!(lsts = ft_lstnew((*f)(lst->content))))
+		lsts = ft_lstnew((*f)(lst->content));
+		if (!lsts)
 		{
 			ft_lstclear(&new, del);
 			return (NULL);
