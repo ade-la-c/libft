@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 20:30:21 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/06/01 17:19:40 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/06/09 14:44:31 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			strs[++j] = (char *)ft_substr(s, i, definelen(s, c, i));
-			if (!strs[++j])
+			if (!strs[j])
 				return (ft_free(strs));
 			i += definelen(s, c, i);
 		}
