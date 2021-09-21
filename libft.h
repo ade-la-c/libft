@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 10:06:51 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/06/01 15:42:25 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/09/16 11:35:49 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdio.h>
+# include <limits.h>
+
+# include "gnl/get_next_line.h"
 
 typedef struct s_list
 {
@@ -79,5 +82,7 @@ void				ft_putchar(char c);
 void				ft_putstr(char *s);
 void				ft_putnbr_base(int nbr, char *base);
 char				*ft_utoa(unsigned long long n);
+int					ft_strcmp(const char *s1, const char *s2);
+void				ft_sort_int_tab(int *tab, int size);
 
 #endif
