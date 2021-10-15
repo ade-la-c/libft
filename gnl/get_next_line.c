@@ -6,13 +6,13 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 11:22:58 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/09/16 11:42:38 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/10/15 16:30:00 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int	scan_gnl(char *s)
+static int	scan_nl(char *s)
 {
 	int	pos;
 
@@ -38,7 +38,9 @@ static char	*strjoin_eol(char *s, char *buf)
 		i++;
 	while (buf && buf[j] && buf[j] != '\n')
 		j++;
-	tab = malloc(i + j + 1);
+	tab = (char *)malloc(i + j + 1);
+	if (!tab)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s && s[i] && s[i] != '\n')
@@ -50,28 +52,31 @@ static char	*strjoin_eol(char *s, char *buf)
 	return (tab);
 }
 
-int	get_next_line(int fd, char **line)
+char	*get_next_line(int fd)
 {
-	static char	buf[BUFFERSIZE + 1];
+	char		*line;
+	static char	buf[BUFFER_SIZE + 1];
 	int			i;
 	int			ret;
 
 	i = 0;
 	ret = 1;
-	*line = strjoin_eol(NULL, buf);
-	if (!line || !*line)
-		return (-1);
-	while (scan_gnl(buf) == -1 && ret && ret != -1)
+	line = strjoin_eol(NULL, buf);
+	if (!line)
+		return (NULL);
+	while (scan_nl(buf) == -1 && ret && ret != -1)
 	{
-		ret = read(fd, buf, BUFFERSIZE);
+		ret = read(fd, buf, BUFFER_SIZE);
 		buf[ret] = 0;
-		*line = strjoin_eol(*line, buf);
+		line = strjoin_eol(line, buf);
+		if (!line)
+			return (NULL);
 	}
 	if (!buf[0])
-		return (0);
-	ret = scan_gnl(buf) + 1;
+		return (NULL);
+	ret = scan_nl(buf) + 1;
 	while (buf[ret] && buf[i])
 		buf[i++] = buf[ret++];
 	buf[i] = 0;
-	return (1);
+	return (line);
 }
