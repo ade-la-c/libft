@@ -6,7 +6,7 @@
 /*   By: ade-la-c <ade-la-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 19:33:02 by ade-la-c          #+#    #+#             */
-/*   Updated: 2021/09/15 16:54:13 by ade-la-c         ###   ########.fr       */
+/*   Updated: 2021/11/02 19:01:09 by ade-la-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ static int	checkisspace(char c)
 
 int	ft_atoi(const char *s)
 {
-	size_t		i;
-	size_t		res;
-	int			neg;
+	long long		i;
+	long long		res;
+	int				neg;
 
 	i = 0;
 	res = 0;
 	neg = 1;
-	while (checkisspace(s[i]) == 1)
+	while (checkisspace(s[i]))
 		i++;
 	if (s[i] == '+' || s[i] == '-')
 	{
@@ -39,7 +39,9 @@ int	ft_atoi(const char *s)
 	}
 	while (s[i] && (s[i] >= '0' && s[i] <= '9'))
 		res = res * 10 + (s[i++] - 48);
-	if (res > INT32_MAX)
+	if (res > INT64_MAX)
 		return (-1);
+	if (res < INT64_MIN)
+		return (0);
 	return (res * neg);
 }
